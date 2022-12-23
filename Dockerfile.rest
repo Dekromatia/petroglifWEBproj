@@ -1,0 +1,18 @@
+FROM ubuntu:focal
+
+RUN apt update
+RUN apt install -y python3-pip
+#RUN apt install eve перешло requirements-rest.txt
+
+RUN mkdir -p /app
+WORKDIR  /app 
+
+COPY requirements-rest.txt /app/requirements.txt
+RUN pip3 install -r requirements.txt
+
+#COPY  /app/  - копируем все содержимое дирриктории но можно копировать только отдельные файлы внутрь нашего образа как ниже
+COPY rest.py /app/rest.py 
+
+CMD ["python3", "rest.py"]
+
+EXPOSE 5000
