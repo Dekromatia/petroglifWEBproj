@@ -21,7 +21,7 @@
     <!--Шапка с навигацией страницы-->
     <nav class="navbar navbar-expand-lg fixed-top bg-light">
         <div class="container-xxl">
-            <a class="navbar-brand" href="homepage.html.j2">Петроглифы Пегтымеля</a>
+            <a class="navbar-brand" href="/">Петроглифы Пегтымеля</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <!--span class="navbar-toggler-icon"></span-->
@@ -29,16 +29,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="page5_research.html.j2">Исследование</a>
+                        <a class="nav-link active" aria-current="page" href="/resurch">Исследование</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="homepage.html.j2">Петроглифы</a>
+                        <a class="nav-link" href="/#text">Петроглифы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="page2_graph.html.j2">Граф</a>
+                        <a class="nav-link" href="/graph2">Граф</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="page4_present.html.j2">О нас</a>
+                        <a class="nav-link" href="/aboutus">О нас</a>
                     </li>
                 </ul>
             </div>
@@ -84,9 +84,16 @@
     </div>
     <!-- КОНТАКТЫ -->
     <div class="contacts text-center">
+        {# <a class="navbar-brand" href="/">На главную</a> #}
+        <p><a href="/">На главную</a></p>
         <p><a href="https://github.com/MarusyaS/petroglyphs">Наш Гитхаб</a></p>
         <p>Наша почта: pegtymeldeers@gmail.com</p>
     </div>
+        {# <!--HOME-->
+    <a class="navbar-brand" href="/">На главную</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    </button> #}
     <!--FOOTER-->
     <footer class="site-footer">
         <div class="container-fluid">

@@ -3,28 +3,28 @@ let legs_json = {
         {
             "id": "1-1-1",
             "surface_number": "1-1",
-            "png": "gan_images/1-1-1.png",
+            "png": "../static/img/gan_images/1-1-1.png",
             "multi_figured_composition": 1.0,
             "other_creatures": 0.0
         },
         {
             "id": "1-2-1",
             "surface_number": "1-2",
-            "png": "gan_images/1-2-1.png",
+            "png": "../static/img/gan_images/1-2-1.png",
             "multi_figured_composition": 1.0,
             "other_creatures": 1.0
         },
         {
             "id": "1-3-1",
             "surface_number": "1-3",
-            "png": "gan_images/1-3-1.png",
+            "png": "../static/img/gan_images/1-3-1.png",
             "multi_figured_composition": 1.0,
             "other_creatures": 1.0
         },
         {
             "id": "1-3-2",
             "surface_number": "1-3",
-            "png": "gan_images/1-3-2.png",
+            "png": "../static/img/gan_images/1-3-2.png",
             "multi_figured_composition": 1.0,
             "other_creatures": 1.0
         },

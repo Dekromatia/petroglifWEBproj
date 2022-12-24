@@ -17,7 +17,7 @@ def about_us():
     #result = requests.get(REST_URL).json()
     return render_template("page4_present.html.j2")
 
-@app.route("/graph")
+@app.route("/graph2")
 def graph():
     #result = requests.get(REST_URL).json()
     return render_template("page2_graph.html.j2")
