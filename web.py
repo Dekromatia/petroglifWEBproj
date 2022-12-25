@@ -25,13 +25,17 @@ def graph():
 @app.route("/resurch")
 def resurch():
     #result = requests.get(REST_URL).json()
-    return render_template("page5_research.html")
+    return render_template("page5_research.html.j2")
 
 @app.route("/ch")
 def ch():
     #result = requests.get(REST_URL).json()
     return render_template("chykotka.html.j2")
 
+@app.route("/base2")
+def base():
+    #result = requests.get(REST_URL).json()
+    return render_template("base2.html.j2")
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
