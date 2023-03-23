@@ -1,0 +1,14 @@
+{% extend "page3_library.html"%}
+{% block books %}
+{% macro books_list(list_of_book) -%}
+  <ul>
+  {% for u in list_of_book -%}
+    <li> 
+    <a href="{{u.url}}" class="list-group-item">{{u.name}}</a>
+    </li>
+  {%- endfor %}
+  </ul>
+{%- endmacro %}
+
+{{ books_list(books)}}
+{% endblock %}
