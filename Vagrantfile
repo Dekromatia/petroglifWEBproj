@@ -39,6 +39,11 @@ Vagrant.configure("2") do |config|
     sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
     sudo usermod -aG docker vagrant
 
+    # sudo apt install software-properties-common
+    # sudo add-apt-repository ppa:deadsnakes/ppa
+    sudo apt-get install python 3.7
+    # sudo apt install nvidia-cuda-toolkit
+
     #wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
     #echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
     #apt-get update

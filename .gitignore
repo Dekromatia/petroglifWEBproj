@@ -161,3 +161,4 @@ cython_debug/
 .vagrant/
 node_modules/
 svg,
+if i need rest & mongo/

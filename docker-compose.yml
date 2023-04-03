@@ -1,31 +1,49 @@
 version: "3.3"
 services:
   web:
+    container_name: flask-app
     build:
       context: .
       dockerfile: Dockerfile.web
     ports:
       - 5000:5000
-    environment:
-      - MONGO_HOST=mongo
+    # environment:
+    #   - PIXPLOT_HOST=pixplot
+    # depends_on:
+    #   - pixplot
+    # environment:
+    #   - MONGO_HOST=mongo
       #- REST_URL=http://rest:5000/people/
-    depends_on:
-      - rest
+    # depends_on:
+    #   - rest
     volumes:
       - ./:/app
-  rest:
-    build:
-      context: .
-      dockerfile: Dockerfile.rest
-    ports:
-      - 8000:5000
-    environment:
-      - MONGO_HOST=mongo
-    depends_on:
-      - mongo
-    volumes:
-      - ./:/app
-  mongo:
-    image: "mongo:4"
-    ports:
-      - 27017:27017
+  # pixplot:
+  #   container_name: pixplot
+  #   build:
+  #     context: ./pixplot
+  #     dockerfile: Dockerfile
+  #   # command: bash -c "cd . && python3.6 utils/process_images.py './data/images/*'"
+  #   ports:
+  #     - 6000:6000
+  #   volumes:
+  #     - ./pixplot:/pixplot
+  #     - ./output:/pixplot/output
+  #   command: bash -c "python3.6 -m http.server 6000"
+    # command: bash -c "cd pixplot && python3.6 utils/process_images.py 'images/*' && python3.6 -m http.server 6000"
+  # rest:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.rest
+  #   ports:
+  #     - 8000:5000
+  #   environment:
+  #     - MONGO_HOST=mongo
+  #   depends_on:
+  #     - mongo
+  #   volumes:
+  #     - ./:/app
+  # mongo:
+  #   image: "mongo:4"
+  #   ports:
+  #     - 27017:27017
