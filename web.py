@@ -2,7 +2,7 @@
 
 #REST_URL = os.enversion.get("MONGO_HOST", "http://localhost/")
 
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 import requests
 # import image_datasets
 
@@ -38,13 +38,12 @@ def about_us():
     return render_template("page4_present.html.j2")
 
 # @app.route("/pixplot --images "path/to/images/*.jpg"")
-@app.route("/graph2")
+@app.route("/graph")
 def graph():
-    #result = requests.get(REST_URL).json()
-    return render_template("yel.html.j2")
+    result = redirect(f"http://127.0.0.1:4000")
+    return result
 
-
-@app.route("/resurch")
+@app.route("/research")
 def resurch():
     #result = requests.get(REST_URL).json()
     return render_template("page5_research.html.j2")
