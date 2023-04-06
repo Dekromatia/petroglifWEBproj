@@ -1,62 +1,64 @@
-#import os
-
-#REST_URL = os.enversion.get("MONGO_HOST", "http://localhost/")
-
-from flask import Flask, render_template, redirect
+#импортируем модули
+from jinja2 import Environment, FileSystemLoader, Template
+from flask import Flask, render_template, url_for, jsonify, render_template_string
 import requests
-# import image_datasets
+import os
+import folium
+import json
 
+fileloader = FileSystemLoader('templates')
 
-# specify version number
-# import pkg_resources
-# __version__ = pkg_resources.get_distribution('pixplot').version
+env = Environment(loader = fileloader)
 
-app = Flask(__name__)
+TEMPLATE_DIR = os.path.abspath('templates') #задаем пути для запуска файлов во Flask
+STATIC_DIR = os.path.abspath('static')
 
-# @app.route('/')
-# def index():
-#     # Make a request to the other Docker container's web server
-#     html_response = requests.get('pixplot:6000')
+with open('csvjson.json', encoding = "UTF-8") as f:
+    my_table = json.load(f)
 
-#     # Extract the HTML content from the response
-#     html_content = html_response.text
-
-#     # Return the HTML content as a response
-#     return render_template('index.html', html_content=html_content)
-
-# image_datasets.oslomini.download()
-# pixplot --images "datasets/images/*.jpg"
+app = Flask(__name__, template_folder=TEMPLATE_DIR, static_folder=STATIC_DIR)
 
 @app.route("/")
 def homepage():
-    #result = requests.get(REST_URL).json()
-    return render_template("homepage.html.j2") #добавить в скобки , result = result
+    # result = requests.get(REST_URL).json()
+    return render_template("base.html") #добавить в скобки , result = result
+
+# @app.route("/aboutus")
+# def about_us():
+#     #result = requests.get(REST_URL).json()
+#     return render_template("page4_present.html.j2")
+
+@app.route("/graph2")
+def graph():
+#     #result = requests.get(REST_URL).json()
+    return render_template("page2_graph.html")
+
+@app.route("/resurch")
+def resurch():
+#     #result = requests.get(REST_URL).json()
+    return render_template("page5_research.html")
+
+@app.route("/ch")
+def ch():
+#     #result = requests.get(REST_URL).json()
+    return render_template("chykotka.html")
+
+@app.route("/books")
+def books():
+    return render_template("page3_library.html")
 
 @app.route("/aboutus")
 def about_us():
     #result = requests.get(REST_URL).json()
-    return render_template("page4_present.html.j2")
+    return render_template("page4_present.html")
 
-# @app.route("/pixplot --images "path/to/images/*.jpg"")
-@app.route("/graph")
-def graph():
-    result = redirect(f"http://127.0.0.1:4000")
-    return result
-
-@app.route("/research")
-def resurch():
-    #result = requests.get(REST_URL).json()
-    return render_template("page5_research.html.j2")
-
-@app.route("/ch")
-def ch():
-    #result = requests.get(REST_URL).json()
-    return render_template("chykotka.html.j2")
-
-@app.route("/base2")
-def base():
-    #result = requests.get(REST_URL).json()
-    return render_template("base2.html.j2")
+# @app.route("/base2")
+# def base():
+#     #result = requests.get(REST_URL).json()
+#     return render_template("base2.html.j2")
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
+    # app.run(debug=True)
+
+# print (TEMPLATE_DIR)
